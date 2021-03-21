@@ -1,10 +1,6 @@
-import com.sun.xml.internal.fastinfoset.tools.FI_DOM_Or_XML_DOM_SAX_SAXEvent;
 import org.junit.Test;
-
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
-
 import static org.junit.Assert.*;
 
 public class tests {
@@ -15,7 +11,6 @@ public class tests {
         //slowo w pliku null
         //when
         int result = main.czytaniePliku("slowo", null);
-
         //then
         assertEquals(0, result);
     }
@@ -37,7 +32,6 @@ public class tests {
         int result = main.czytaniePliku(null, Paths.get("src", "test", "resources", "plik").toFile());
         //then
         assertEquals(0,result);
-
     }
 
     @Test
@@ -48,8 +42,8 @@ public class tests {
         int result = main.czytaniePliku("slowo", Paths.get("src", "test", "resources", "hehe").toFile());
         //then
         assertEquals(0, result);
-
     }
+
     @Test
     public void emptyWord() throws IOException {
         //given
@@ -66,10 +60,7 @@ public class tests {
         //slowo zawarte w istniejacym pliku
         //when
         int result = main.czytaniePliku("lorem", Paths.get("src", "test", "resources", "plik").toAbsolutePath().toFile());
-
         //then
         assertEquals(3, result);
-
     }
-
 }
